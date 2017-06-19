@@ -9,7 +9,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/primavera http://www.mulesoft.org/schema/mule/primavera/current/mule-primavera.xsd">
     <flow name="primaveraesbFlow">
-        <http:listener config-ref="HTTP_ESB_Configuration" path="/info" allowedMethods="GET" doc:name="HTTP"/>
+        <http:listener config-ref="HTTP_ESB_Configuration" path="/primavera/info" allowedMethods="GET" doc:name="HTTP"/>
         <primavera:greet config-ref="Primavera__Conf" friend="Johnny" doc:name="Primavera"/>
         <logger message="#[message.payloadAs(java.lang.String)]" level="INFO" doc:name="Logger"/>
     </flow>

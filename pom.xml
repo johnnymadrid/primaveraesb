@@ -6,7 +6,7 @@
 	<artifactId>primaveraesb</artifactId>
     <version>1.0.0</version>
     <packaging>mule</packaging>
-	<name>Mule primaveraesb Application</name>
+	<name>Primavera ESB</name>
 
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
