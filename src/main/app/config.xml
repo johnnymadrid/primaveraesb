@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:context="http://www.springframework.org/schema/context" xmlns:primavera="http://www.mulesoft.org/schema/mule/primavera" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:spring="http://www.springframework.org/schema/beans" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<mule xmlns:oracle-primavera="http://www.mulesoft.org/schema/mule/oracle-primavera"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-current.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
-http://www.mulesoft.org/schema/mule/primavera http://www.mulesoft.org/schema/mule/primavera/current/mule-primavera.xsd">
-    <context:property-placeholder location="${mule.env}.properties, common.properties"/>
-    <http:listener-config name="HTTP_ESB_Configuration" host="${host}" port="${port}" doc:name="HTTP Listener Configuration"/>
-    <primavera:config name="Primavera__Conf" doc:name="Primavera: Configuration"/>
+http://www.mulesoft.org/schema/mule/oracle-primavera http://www.mulesoft.org/schema/mule/oracle-primavera/current/mule-oracle-primavera.xsd">
+	<context:property-placeholder
+		location="${mule.env}.properties, common.properties" />
+	<http:listener-config name="HTTP_ESB_Configuration"
+		host="${host}" port="${port}" doc:name="HTTP Listener Configuration" />
+	<oracle-primavera:OraclePrimavera
+		name="PR6_Configuration" password="London2017!" url="admin"
+		user="jdbc:sqlite://C:/Users/jmadridh/Desktop/OraclePrimavera/PPMDBSQLite.db"
+		doc:name="OraclePrimavera: Configuration" />
+
 </mule>
